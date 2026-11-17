@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow">
+<title>LitBuy spreadsheet | Product Finds, QC &amp; Shipping Budget</title>
+<meta name="description" content="Browse HipobuyFind shoes, hoodies, tees and jackets in this LitBuy spreadsheet guide. Compare listing prices, check sizing and estimate your order total.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LitBuy spreadsheet | Product Finds, QC &amp; Shipping Budget">
+<meta property="og:description" content="Browse product finds, check listing details and estimate your order total before buying.">
+<!-- Add a self-referencing canonical URL after deployment. Google and Bing submission is pending a public URL and verified site access. -->
+<!-- Search review: lispreadsheet.com emphasizes category browsing; litbuy.works covers QC and shipping; litbuylinks.cc shows size ranges. This page adds a filterable source-price snapshot, category-specific QC checks and a landed-cost calculator. Exact Google positions were not verified. -->
+<style>
+:root{color-scheme:light;--ink:#25233a;--muted:#57546b;--paper:#f8f7fc;--line:#ddd9ec;--accent:#5d35bf}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
+main,footer{width:min(1100px,calc(100% - 2rem));margin-inline:auto}
+header{text-align:center;padding:clamp(3rem,9vw,7rem) 1rem;background:radial-gradient(ellipse at top,#e3d7ff,transparent 75%)}
+header p{max-width:40rem;margin:1rem auto 1.5rem;color:var(--muted)}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(2.6rem,8vw,6rem);letter-spacing:-.075em;line-height:1;margin-bottom:0}
+h2{font-size:clamp(1.5rem,4vw,2.25rem);line-height:1.2;letter-spacing:-.04em}
+a{color:var(--accent);text-underline-offset:.2em}
+.actions,.categories{display:flex;flex-wrap:wrap;justify-content:center;gap:.65rem}
+.button{display:inline-block;padding:.7rem 1rem;border:1px solid var(--accent);border-radius:.65rem;text-decoration:none;font-weight:700}
+.primary{background:var(--accent);color:white}
+section{margin-bottom:2.5rem}
+.intro{text-align:center}
+.categories a{padding:.3rem .75rem;background:white;border:1px solid var(--line);border-radius:2rem}
+.panel{background:white;border:1px solid var(--line);border-radius:1rem;padding:clamp(1rem,3vw,2rem)}
+.muted,small{color:var(--muted)}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:.8rem;margin:1rem 0}
+label{display:block;font-weight:650}
+input,select{display:block;width:100%;margin-top:.25rem;border:1px solid #918aa8;border-radius:.5rem;padding:.55rem;background:white;color:inherit;font:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.scroll{overflow:auto}
+table{width:100%;border-collapse:collapse;text-align:left}
+caption{text-align:left;color:var(--muted);padding-bottom:.6rem}
+th,td{padding:.65rem;border-bottom:1px solid var(--line)}
+td:last-child,th:last-child{white-space:nowrap;text-align:right}
+output{display:block;font-size:1.35rem;font-weight:750}
+details{border-top:1px solid var(--line);padding:.8rem 0}
+details p{margin:.5rem 0 0}
+summary{cursor:pointer;font-weight:700}
+footer{text-align:center;padding:0 0 2rem;color:var(--muted)}
+</style>
+<link rel="canonical" href="https://kakobuyfinds.github.io/isbma/">
+</head>
+<body>
+<header>
+<h1>LitBuy spreadsheet</h1>
+<p>Browse shoes and clothing from HipobuyFind, compare listing prices, and work out what an order could cost after shipping.</p>
+<div class="actions">
+<a class="button primary" href="https://hipobuyfind.com/">LitBuy spreadsheet</a>
+<a class="button" href="https://hipobuyfind.com/">Buy it now</a>
+</div>
+</header>
+<main>
+<section class="intro" aria-labelledby="categories">
+<h2 id="categories">Browse the HipobuyFind catalog</h2>
+<nav class="categories" aria-label="HipobuyFind categories">
+<a href="https://hipobuyfind.com/category-911-Shoes.html">Shoes</a>
+<a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies &amp; sweaters</a>
+<a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts</a>
+<a href="https://hipobuyfind.com/category-914-Jackets.html">Jackets</a>
+<a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pants &amp; shorts</a>
+</nav>
+</section>
+<section class="panel" aria-labelledby="catalog">
+<h2 id="catalog">Product finds and source prices</h2>
+<p class="muted">Selected HipobuyFind listings. Prices are a snapshot in Chinese yuan. Open the item to verify the current price, options and availability.</p>
+<div class="fields" id="filters" hidden>
+<label>Search listings<input id="query" type="search" placeholder="Product name or item ID"></label>
+<label>Category<select id="category"><option value="">All categories</option><option>Shoes</option><option>Hoodies</option><option>T-shirts</option><option>Jackets</option></select></label>
+</div>
+<div class="scroll" role="region" aria-label="Product listings" tabindex="0">
+<table>
+<caption id="count" aria-live="polite">4 listings</caption>
+<thead><tr><th scope="col">Product</th><th scope="col">Category</th><th scope="col">Item ID</th><th scope="col">Listed price</th></tr></thead>
+<tbody id="products">
+<tr><td><a href="https://hipobuyfind.com/goods-149969.html">Black and Red Basketball Sneakers</a></td><td>Shoes</td><td>149969</td><td>¥145.00</td></tr>
+<tr><td><a href="https://hipobuyfind.com/goods-154917.html">Fleece-Lined Hoodie</a></td><td>Hoodies</td><td>154917</td><td>¥170.00</td></tr>
+<tr><td><a href="https://hipobuyfind.com/goods-154919.html">Short-Sleeve T-Shirt</a></td><td>T-shirts</td><td>154919</td><td>¥105.00</td></tr>
+<tr><td><a href="https://hipobuyfind.com/goods-154851.html">Hooded Quick-Dry Jacket</a></td><td>Jackets</td><td>154851</td><td>¥157.14</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="panel" aria-labelledby="budget">
+<h2 id="budget">Estimate your order total</h2>
+<p class="muted">Use CNY for every field. Convert any foreign-currency quotes first and enter taxes only if they are separate from your shipping quote.</p>
+<form id="estimate">
+<div class="fields">
+<label>Items (¥)<input type="number" min="0" step=".01" inputmode="decimal"></label>
+<label>Domestic shipping (¥)<input type="number" min="0" step=".01" inputmode="decimal"></label>
+<label>International shipping (¥)<input type="number" min="0" step=".01" inputmode="decimal"></label>
+<label>Fees and taxes (¥)<input type="number" min="0" step=".01" inputmode="decimal"></label>
+</div>
+<output id="total" aria-live="polite">Estimated total ¥0.00</output>
+</form>
+<noscript><p>Add the item subtotal, domestic shipping, international shipping, fees and taxes to estimate your total.</p></noscript>
+</section>
+<section class="panel" aria-labelledby="checks">
+<h2 id="checks">Sizing, QC photos and shipping</h2>
+<details open><summary>How do I check the size?</summary><p>For shoes, compare your foot length with the seller’s size chart and ask for an insole measurement if you are between sizes. For clothing, lay a similar garment flat and compare its chest width, body length and sleeve length in centimeters.</p></details>
+<details><summary>What should I look for in QC photos?</summary><p>Match the photos to the color and size you selected. For shoes, check both heels and outsoles. For hoodies and tees, check seam alignment and print placement. For jackets, ask for close-ups of zippers, cuffs and lining if they are unclear.</p></details>
+<details><summary>Why can the shipping quote change?</summary><p>Final packaging can change the parcel’s weight and dimensions. Ask whether your route bills by actual or volumetric weight, then refresh the estimate once you have the packed dimensions.</p></details>
+<details><summary>Where do the product listings come from?</summary><p>This is an independent LitBuy spreadsheet guide. The catalog links open HipobuyFind, where you can confirm listing details before ordering.</p></details>
+</section>
+</main>
+<footer>Catalog source <a href="https://hipobuyfind.com/">HipobuyFind</a></footer>
+<script>
+const filters = document.getElementById('filters');
+const query = document.getElementById('query');
+const category = document.getElementById('category');
+const count = document.getElementById('count');
+const rows = Array.from(document.querySelectorAll('#products tr'));
+
+function filterProducts() {
+  const search = query.value.trim().toLowerCase();
+  let visible = 0;
+  for (const row of rows) {
+    const matchesCategory = !category.value || row.cells[1].textContent === category.value;
+    row.hidden = !(matchesCategory && row.textContent.toLowerCase().includes(search));
+    if (!row.hidden) visible += 1;
+  }
+  count.textContent = visible === 1 ? '1 listing' : visible + ' listings';
+}
+
+filters.removeAttribute('hidden');
+query.addEventListener('input', filterProducts);
+category.addEventListener('change', filterProducts);
+
+const estimate = document.getElementById('estimate');
+const amounts = Array.from(estimate.querySelectorAll('input'));
+const total = document.getElementById('total');
+const format = new Intl.NumberFormat('en', { style: 'currency', currency: 'CNY', currencyDisplay: 'narrowSymbol' });
+
+function updateEstimate() {
+  if (amounts.some(input => !input.validity.valid)) {
+    total.textContent = 'Enter nonnegative amounts with up to two decimal places.';
+    return;
+  }
+  const cents = amounts.reduce((sum, input) => sum + Math.round(100 * (input.valueAsNumber || 0)), 0);
+  total.textContent = 'Estimated total ' + format.format(cents / 100);
+}
+
+estimate.addEventListener('input', updateEstimate);
+estimate.addEventListener('submit', event => event.preventDefault());
+</script>
+</body>
+</html>
